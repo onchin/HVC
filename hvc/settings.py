@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'hvc.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
+        'NAME': 'db08u1j70b6kuc',
+        'USER': 'fkfbylnebxeenx',
+        'PASSWORD': '66d91bd840231b9f3ab34329447280d67d41373661aff2b2a09acb814d239721',
+        'HOST': 'ec2-18-213-176-229.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -136,7 +136,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
 
 
 django_heroku.settings(locals())
