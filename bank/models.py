@@ -21,7 +21,7 @@ class Address(models.Model):
 class Comment(models.Model):
     commentID = models.IntegerField(blank=False, null=False, primary_key=True)
     comment = models.CharField(max_length=150, default=None)
-    author = models.CharField(User, max_length=150, blank=False, null=False)
+    author = models.CharField(User, max_length=250, blank=False, null=False)
 
 
 class Account(models.Model):
