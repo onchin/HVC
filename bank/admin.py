@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import Customer, Account, Address, Branch
+from .models import Customer, Account, Address, Branch, Comment
 
 # Register your models here.
 
 
 class CustomerList(admin.ModelAdmin):
-    list_display = ('customerID', 'firstName', 'lastName', 'address', 'account')
+    list_display = ('customerID', 'firstName', 'lastName', 'address', 'account', 'comment')
     list_filter = ('customerID', 'firstName', 'lastName', 'account')
     search_fields = ('customerID', 'firstName', 'lastName', 'account')
     ordering = ['customerID']
@@ -32,10 +32,17 @@ class AccountList(admin.ModelAdmin):
     ordering = ('accountNumber',)
 
 
+class CommentList(admin.ModelAdmin):
+    list_display = ('commentID', 'comment', 'author')
+    list_filter = ('commentID', 'author')
+    search_fields = ('commentID', 'author')
+    ordering = ('commentID',)
+
+
 admin.site.register(Customer, CustomerList)
 admin.site.register(Branch, BranchList)
 admin.site.register(Address, AddressList)
 admin.site.register(Account, AccountList)
-
+admin.site.register(Comment, CommentList)
 
 
